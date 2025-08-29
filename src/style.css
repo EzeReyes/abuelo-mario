@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+#pomada {
+    background-image: url('https://i.ibb.co/nMsxZcnS/Whats-App-Image-2025-08-28-at-20-50-02.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#texturizador {
+    background-image: url('https://i.ibb.co/6Rmbz5bR/Whats-App-Image-2025-08-28-at-20-49-15.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#shavinggel {
+    background-image: url('https://i.ibb.co/YBQzkb6j/Whats-App-Image-2025-08-28-at-20-49-44.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
+}
+
+.text-shadow-gold {
+  text-shadow: 2px 2px 4px rgba(255, 230, 0, 0.781);
+}
+
