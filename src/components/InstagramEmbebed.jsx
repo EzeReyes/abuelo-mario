@@ -7,8 +7,6 @@ const InstagramEmbed = () => {
           src="https://www.instagram.com/p/DKdVe9UPLUI/embed"
           width="auto"
           height="500"
-          frameBorder="0"
-          scrolling="no"
           allowTransparency="true"
           allowFullScreen
           className="w-full rounded-xl shadow-xl"

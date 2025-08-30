@@ -30,7 +30,7 @@ const ContactForm = () => {
         className="max-w-3xl mx-auto bg-white shadow-2xl rounded-3xl p-8 space-y-6"
       >
         <div>
-          <label for="nombre" className="block text-gray-700 font-medium mb-2">Nombre</label>
+          <label htmlFor="nombre" className="block text-gray-700 font-medium mb-2">Nombre</label>
           <input
             type="text"
             name="nombre"
@@ -43,7 +43,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label for="email" className="block text-gray-700 font-medium mb-2">Email</label>
+          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
           <input
             type="email"
             name="email"
@@ -56,7 +56,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label for="message" className="block text-gray-700 font-medium mb-2">Mensaje</label>
+          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Mensaje</label>
           <textarea
             name="mensaje"
             value={formData.mensaje}
