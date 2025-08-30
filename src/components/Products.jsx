@@ -39,7 +39,7 @@ const Products = () => {
         Alguno de nuestros productos
       </div>
 
-      <div className="flex flex-row gap-10">
+      <div className="w-screen flex sm:flex-col flex-row gap-10">
         {products.map((product, index) => (
           <div key={index} className="flex flex-col gap-4 items-center justify-center">
             <div
