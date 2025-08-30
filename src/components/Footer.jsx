@@ -4,8 +4,9 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-white text-lg font-bold flex items-center">
             <img
-            src="/images/imagen-fondo.png"
+            src="https://i.ibb.co/rGr7CKLL/img-abuelo.webp"
             alt="Logo"
+            title="Logo Abuelo Mario"
             className="inline-block rounded-full h-8 w-8 mr-2"
             />
             <span className="font-sans italic text-2xl text-black shadow-2xl  text-shadow-gold">ABUELO MARIO</span>

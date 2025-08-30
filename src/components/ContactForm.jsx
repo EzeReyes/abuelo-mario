@@ -30,10 +30,11 @@ const ContactForm = () => {
         className="max-w-3xl mx-auto bg-white shadow-2xl rounded-3xl p-8 space-y-6"
       >
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Nombre</label>
+          <label for="nombre" className="block text-gray-700 font-medium mb-2">Nombre</label>
           <input
             type="text"
             name="nombre"
+            id="nombre"
             value={formData.nombre}
             onChange={handleChange}
             required
@@ -42,10 +43,11 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Email</label>
+          <label for="email" className="block text-gray-700 font-medium mb-2">Email</label>
           <input
             type="email"
             name="email"
+            id="email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -54,11 +56,12 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label className="block text-gray-700 font-medium mb-2">Mensaje</label>
+          <label for="message" className="block text-gray-700 font-medium mb-2">Mensaje</label>
           <textarea
             name="mensaje"
             value={formData.mensaje}
             onChange={handleChange}
+            id="message"
             required
             rows="5"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500"

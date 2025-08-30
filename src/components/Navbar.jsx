@@ -28,7 +28,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="text-white text-lg font-bold flex items-center">
           <img
-            src="/images/imagen-fondo.png"
+            src="https://i.ibb.co/rGr7CKLL/img-abuelo.webp"
             alt="Logo"
             title='Abuelo Mario'
             className="inline-block rounded-full h-8 w-8 mr-2"
@@ -42,6 +42,8 @@ const Navbar = () => {
         <button
           className="md:hidden text-black focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Aria Name"
+          title='Menú'  
         >
           <svg
             className="w-6 h-6"

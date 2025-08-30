@@ -4,7 +4,7 @@ const SectionOne = () => {
         <section className="bg-gradient-to-br from-yellow-500 to-yellow-400 text-white py-20 px-4">
             <div className="opacity-0 animate-fade-in delay-200">
             <div className="flex flex-col md:flex-row items-center justify-around gap-8">
-            <img src="https://i.ibb.co/NdTk7Gj1/1.jpg" className="h-80 w-auto rounded-xl shadow-lg border-4 border-white" />
+            <img src="https://i.ibb.co/0jJPHvJx/img-barberia.webp" title="barberia" alt="imagen-barberia"  className="h-80 w-auto rounded-xl shadow-lg border-4 border-white" />
             
             <div className="flex flex-col gap-4 max-w-xl text-left">
                 <p className="italic text-md md:text-lg">

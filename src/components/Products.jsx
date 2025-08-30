@@ -34,12 +34,12 @@ const Products = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <div id="products" className="text-4xl font-bold mb-10 text-gray-800">
+    <div id="products" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+      <div className="text-4xl font-bold mb-10 text-gray-800">
         Alguno de nuestros productos
       </div>
 
-      <div className="w-screen flex flex-col md:flex-row gap-10">
+      <div className="w-screen flex flex-col items-center justify-center md:flex-row gap-10">
         {products.map((product, index) => (
           <div key={index} className="flex flex-col gap-4 items-center justify-center">
             <div
