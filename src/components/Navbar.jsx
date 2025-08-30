@@ -30,6 +30,7 @@ const Navbar = () => {
           <img
             src="/images/imagen-fondo.png"
             alt="Logo"
+            title='Abuelo Mario'
             className="inline-block rounded-full h-8 w-8 mr-2"
           />
           <span className="font-sans italic text-2xl text-black shadow-2xl text-shadow-gold">
@@ -70,6 +71,7 @@ const Navbar = () => {
         <div className={`hidden md:flex items-center gap-8`}>
           <a
             href="/#products"
+            title='Productos'
             className={`mx-2 font-bold ${
               !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
             }`}
@@ -78,6 +80,7 @@ const Navbar = () => {
           </a>
           <a
             href="/#about"
+            title='Acerca de'
             className={`mx-2 font-bold ${
               !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
             }`}
@@ -86,6 +89,7 @@ const Navbar = () => {
           </a>
           <a
             href="/#contact"
+            title='Contacto'
             className={`mx-2 font-bold ${
               !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
             }`}
@@ -98,13 +102,13 @@ const Navbar = () => {
       {/* Menú mobile */}
       {isOpen && (
         <div className="md:hidden mt-4 flex flex-col items-center gap-4 bg-white rounded-xl shadow-xl p-4">
-          <a href="/#products" className="text-gray-800 font-bold hover:text-black">
+          <a href="/#products" title="productos" className="text-gray-800 font-bold hover:text-black">
             Products
           </a>
-          <a href="/#about" className="text-gray-800 font-bold hover:text-black">
+          <a href="/#about" title="acerca de" className="text-gray-800 font-bold hover:text-black">
             About
           </a>
-          <a href="/#contact" className="text-gray-800 font-bold hover:text-black">
+          <a href="/#contact" title="contacto" className="text-gray-800 font-bold hover:text-black">
             Contact
           </a>
         </div>

@@ -14,6 +14,7 @@ const SectionOne = () => {
                 “Estilo que se siente. Productos que lo hacen posible.”
                 </div>
                 <a
+                title="Ver productos"
                 href="#products"
                 className="inline-block mt-4 text-center bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full hover:bg-yellow-100 transition"
                 >

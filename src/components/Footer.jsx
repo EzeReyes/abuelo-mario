@@ -14,8 +14,9 @@ const Footer = () => {
           {/* WhatsApp */}
             <a
             href="https://wa.me/5492235950860"
+            title="WhatsApp"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="me noopener noreferrer"
             className="hover:text-yellow-400 transition duration-300 flex items-center gap-2"
             >
             <svg
@@ -32,7 +33,8 @@ const Footer = () => {
             <a
             href="https://www.instagram.com/abuelo_mario777"
             target="_blank"
-            rel="noopener noreferrer"
+            title="Instagram"
+            rel="me noopener noreferrer"
             className="hover:text-yellow-400 transition duration-300 flex items-center gap-2"
             >
             <svg
