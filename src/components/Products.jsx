@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 const Products = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -34,6 +35,7 @@ const Products = () => {
   ];
 
   return (
+    <>
     <div id="products" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       <div className="text-4xl font-bold mb-10 text-gray-800">
         Alguno de nuestros productos
@@ -63,7 +65,9 @@ const Products = () => {
           </div>
         ))}
       </div>
+              <HashLink scroll to={'/'} className='mt-8 text-gray-800 font-bold text-2xl transition-all hover:text-yellow-500 hover:underline'>Ver todos los productos</HashLink>
     </div>
+    </>
   );
 };
 

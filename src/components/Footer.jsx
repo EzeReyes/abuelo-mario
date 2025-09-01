@@ -1,4 +1,13 @@
+import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
+
+
 const Footer = () => {
+
+
+
+
+
     return (
     <footer className="bg-neutral-800 text-white py-8 px-6 md:px-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -49,6 +58,16 @@ const Footer = () => {
             Instagram
             </a>
         </div>
+        </div>
+        <hr className="my-6 border-gray-700" />
+        <div>
+            <p id="questions" className="text-center text-gray-400">Preguntas Frecuentes</p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-4 text-gray-400">
+                <HashLink smooth to="/questions#aplicacion-cera" className="hover:text-yellow-400 transition duration-300">¿Cómo aplico la cera o pomada para el pelo?</HashLink>
+                <HashLink smooth to="/questions#beneficio-cera" className="hover:text-yellow-400 transition duration-300">¿Cuales son los beneficios de aplicar cera?</HashLink>
+                <HashLink smooth to="/questions#mate-brillo" className="hover:text-yellow-400 transition duration-300">¿Que cera es mejor mate o brillo?</HashLink>
+                <HashLink smooth to="/questions#beneficio-shaving" className="hover:text-yellow-400 transition duration-300">¿Cuales son los beneficios del shaving gel?</HashLink>
+            </div>
         </div>
         <hr className="my-6 border-gray-700" />
         <div className="text-center mt-6 text-gray-400">

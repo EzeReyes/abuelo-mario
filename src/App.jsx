@@ -1,30 +1,18 @@
-import About from './components/About'
-import ContactForm from './components/ContactForm'
-import Footer from './components/Footer'
-import InstagramEmbebed from './components/InstagramEmbebed'
-import Navbar from './components/Navbar'
-import Products from './components/Products'
-import SaltodeLinea from './components/SaltodeLinea'
-import SectionOne from './components/SectionOne'
-import SectionTwo from './components/SectionTwo'
-import TipsSection from './components/TipsSection'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './pages/Layout'
+import Home from './pages/Home'
+import Questions from './pages/Questions'
 
 function App() {
-
   return (
-    <>
-      <Navbar />
-      <SectionOne />
-      <About />
-      <SaltodeLinea />
-      <Products />
-      <TipsSection />
-      <InstagramEmbebed />
-      <SectionTwo />
-      <ContactForm />
-      <Footer />
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/questions" element={<Questions />} />
+      </Routes>
+    </Layout>
   )
 }
 
 export default App
+

@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
   const [isTransparent, setIsTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,104 +33,127 @@ const Navbar = () => {
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <div className="text-white text-lg font-bold flex items-center">
-          <img
-            src="https://i.ibb.co/rGr7CKLL/img-abuelo.webp"
-            alt="Logo"
-            title="Abuelo Mario"
-            className="inline-block rounded-full h-8 w-8 mr-2"
-          />
-          <span className="font-sans italic text-2xl text-black shadow-2xl text-shadow-gold">
-            ABUELO MARIO
-          </span>
+          <HashLink to="/" title="Abuelo Mario" onClick={() => setIsOpen(false)}>
+            <img
+              src="https://i.ibb.co/rGr7CKLL/img-abuelo.webp"
+              alt="Logo"
+              title="Abuelo Mario"
+              className="inline-block rounded-full h-8 w-8 mr-2"
+            />
+            <span
+              className={`font-sans italic text-2xl shadow-2xl text-shadow-gold ${
+                location.pathname === '/questions' ? 'text-white' : 'text-black'
+              }`}
+            >
+              ABUELO MARIO
+            </span>
+          </HashLink>
         </div>
 
         {/* Botón hamburguesa */}
         <button
-          className="md:hidden text-black focus:outline-none"
+          className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Menú"
           title="Menú"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
 
         {/* Links desktop */}
         <div className="hidden md:flex items-center gap-8">
+          {location.pathname === '/questions' && (
+            <HashLink
+              to="/"
+              title="Home"
+              className={`font-bold ${
+                location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
+              }`}
+            >
+              Home
+            </HashLink>
+          )}
+
           <div
             className="relative"
             onMouseEnter={() => setProductsDropdownOpen(true)}
             onMouseLeave={() => setProductsDropdownOpen(false)}
           >
-            <a
-              href="/#products"
+            <HashLink
+              to="/#products"
               title="Productos"
               className={`font-bold ${
-                !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
+                location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
               }`}
             >
               Productos
-            </a>
-
+            </HashLink>
             <ul
-              className={`absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-300 ease-in-out
-                ${productsDropdownOpen ? 'opacity-100 max-h-96 translate-y-0' : 'opacity-0 max-h-0 -translate-y-2'}
-              `}
+              className={`absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md overflow-hidden transition-all duration-300 ease-in-out ${
+                productsDropdownOpen ? 'opacity-100 max-h-96 translate-y-0' : 'opacity-0 max-h-0 -translate-y-2'
+              }`}
             >
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ver todos los productos</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
             </ul>
           </div>
 
-          <a
-            href="/#about"
+          <HashLink
+            to="/#about"
             title="Acerca de"
-            className={`mx-2 font-bold ${
-              !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
+            className={`font-bold ${
+              location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
             }`}
           >
             About
-          </a>
-          <a
-            href="/#contact"
+          </HashLink>
+          <HashLink
+            to="/#contact"
             title="Contacto"
-            className={`mx-2 font-bold ${
-              !isTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-800 hover:text-black'
+            className={`font-bold ${
+              location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
             }`}
           >
             Contact
-          </a>
+          </HashLink>
+          <HashLink
+            to="/questions"
+            title="Preguntas Frecuentes"
+            className={`font-bold ${
+              location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
+            }`}
+          >
+            Preguntas Frecuentes
+          </HashLink>
         </div>
       </div>
 
       {/* Menú mobile */}
       {isOpen && (
         <div className="md:hidden mt-4 flex flex-col items-center gap-4 bg-white rounded-xl shadow-xl p-4">
+          {location.pathname === '/questions' && (
+            <HashLink
+              to="/"
+              title="Home"
+              className={`font-bold ${
+                location.pathname === '/questions' && 'text-gray-800 hover:text-black'
+              }`}
+            >
+              Home
+            </HashLink>
+          )}
           <div className="w-full">
             <button
               onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-              className="w-full text-left text-gray-800 font-bold hover:text-black"
+              className="w-full text-gray-800 font-bold hover:text-black"
             >
               Productos
             </button>
@@ -134,19 +161,23 @@ const Navbar = () => {
               className={`transition-all duration-300 ease-in-out overflow-hidden ${
                 mobileProductsOpen ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
               }`}
-            >
+            > 
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ver todos los productos</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
             </ul>
           </div>
 
-          <a href="/#about" title="Acerca de" className="text-gray-800 font-bold hover:text-black">
+          <HashLink to="/#about" title="Acerca de" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
             About
-          </a>
-          <a href="/#contact" title="Contacto" className="text-gray-800 font-bold hover:text-black">
+          </HashLink>
+          <HashLink to="/#contact" title="Contacto" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
             Contact
-          </a>
+          </HashLink>
+          <HashLink to="/questions" title="Preguntas Frecuentes" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
+            Preguntas Frecuentes
+          </HashLink>
         </div>
       )}
     </nav>
