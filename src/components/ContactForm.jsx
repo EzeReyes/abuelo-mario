@@ -7,16 +7,41 @@ const ContactForm = () => {
     mensaje: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (formData.nombre.trim().length < 2) {
+      newErrors.nombre = "El nombre debe tener al menos 2 caracteres.";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "El email no tiene un formato válido.";
+    }
+
+    if (formData.mensaje.trim().length < 10) {
+      newErrors.mensaje = "El mensaje debe tener al menos 10 caracteres.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" }); // Limpia el error al escribir
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí podrías integrar con un backend o servicio como Formspree, EmailJS, etc.
+    if (!validate()) return;
+
     console.log("Formulario enviado:", formData);
     alert("¡Gracias por tu mensaje!");
     setFormData({ nombre: "", email: "", mensaje: "" });
+    setErrors({});
   };
 
   return (
@@ -38,8 +63,11 @@ const ContactForm = () => {
             value={formData.nombre}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              errors.nombre ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
+            }`}
           />
+          {errors.nombre && <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>}
         </div>
 
         <div>
@@ -51,8 +79,11 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
+            }`}
           />
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
 
         <div>
@@ -64,8 +95,11 @@ const ContactForm = () => {
             id="message"
             required
             rows="5"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className={`w-full px-4 py-3 border rounded-lg resize-none focus:outline-none focus:ring-2 ${
+              errors.mensaje ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
+            }`}
           ></textarea>
+          {errors.mensaje && <p className="text-red-500 text-sm mt-1">{errors.mensaje}</p>}
         </div>
 
         <button
