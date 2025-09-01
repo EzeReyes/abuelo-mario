@@ -62,7 +62,6 @@ const ContactForm = () => {
             id="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            required
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
               errors.nombre ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
             }`}
@@ -78,7 +77,6 @@ const ContactForm = () => {
             id="email"
             value={formData.email}
             onChange={handleChange}
-            required
             className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
               errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
             }`}
@@ -93,7 +91,6 @@ const ContactForm = () => {
             value={formData.mensaje}
             onChange={handleChange}
             id="message"
-            required
             rows="5"
             className={`w-full px-4 py-3 border rounded-lg resize-none focus:outline-none focus:ring-2 ${
               errors.mensaje ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
