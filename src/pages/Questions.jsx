@@ -1,3 +1,4 @@
+import BtnWsp from "../components/BtnWsp";
 
 const Questions = () => {
     return (
@@ -39,6 +40,7 @@ const Questions = () => {
                     </div>
                 </div>
             </div>
+            <BtnWsp />
         </div>
     );
 }

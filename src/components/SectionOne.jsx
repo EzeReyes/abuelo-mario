@@ -4,7 +4,7 @@ const SectionOne = () => {
         <section className="bg-gradient-to-br from-yellow-500 to-yellow-400 text-white py-20 px-4">
             <div className="opacity-0 animate-fade-in delay-200">
             <div className="flex flex-col md:flex-row items-center justify-around gap-8">
-            <img src="https://i.ibb.co/0jJPHvJx/img-barberia.webp" title="barberia" alt="imagen-barberia"  className="h-80 w-auto rounded-xl shadow-lg border-4 border-white" />
+            <img src="https://i.ibb.co/p6hr8fbx/img-barberia.webp" title="productos de barberia" alt="abuelo mario, pomadas, ceras para el pelo"  className="h-80 w-auto rounded-xl shadow-lg border-4 border-white" />
             <div className="flex flex-col gap-4 max-w-xl text-left">
                 <h1 className="text-xl md:text-2xl font-bold">
                     Productos de barbería para el cuidado del pelo y la barba

@@ -6,6 +6,7 @@ import TipsSection from '../components/TipsSection'
 import InstagramEmbebed from '../components/InstagramEmbebed'
 import SectionTwo from '../components/SectionTwo'
 import ContactForm from '../components/ContactForm'
+import BtnWsp from '../components/BtnWsp'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <TipsSection />
       <InstagramEmbebed />
       <SectionTwo />
+      <BtnWsp />
       <ContactForm />
     </>
   )

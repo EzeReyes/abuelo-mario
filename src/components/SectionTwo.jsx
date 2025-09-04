@@ -28,14 +28,14 @@ const SectionTwo = () => {
             review:
                 "Hace 6 meses abrí mi barbería y confié en los productos del Abuelo Mario. La verdad, más que feliz por los resultados: los clientes felices, al igual que yo. Son los mejores 🔥👌",
             image:
-                "https://i.ibb.co/BKQpzmLH/img-capitan.webp",
+                "https://i.ibb.co/yn5KSB7r/img-capitan.webp",
             alt: "Reseñas de Clientes",
         },
         {
             name: "El Showroom del Barbero",
             review: "Encontra nuestros mejores productos en El Showroom del Barbero",
             image:
-                "https://i.ibb.co/154Qn9T/img-showroom.webp",
+                "https://i.ibb.co/Xr2Xq2CF/img-showroom.webp",
             alt: "El Showroom del Barbero",
         },
     ];

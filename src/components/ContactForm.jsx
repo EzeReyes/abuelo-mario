@@ -1,10 +1,12 @@
 import { useState } from "react";
+import swal from 'sweetalert';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
     mensaje: "",
+    telefono: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -25,6 +27,10 @@ const ContactForm = () => {
       newErrors.mensaje = "El mensaje debe tener al menos 10 caracteres.";
     }
 
+    if (formData.telefono.trim().length >= 13) {
+      newErrors.telefono = "El teléfono no debe exceder los 13 caracteres.";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -34,21 +40,34 @@ const ContactForm = () => {
     setErrors({ ...errors, [e.target.name]: "" }); // Limpia el error al escribir
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_KEY = import.meta.env.VITE_TEMPLATE_KEY;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
-    console.log("Formulario enviado:", formData);
-    alert("¡Gracias por tu mensaje!");
-    setFormData({ nombre: "", email: "", mensaje: "" });
-    setErrors({});
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!validate()) return;
+
+  fetch('https://abuelo-mario-backend.onrender.com/api/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+})
+.then(() => {
+  swal("El mensaje se ha enviado Correctamente!", "Tu consulta se genero exitosamente", "success");
+  setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
+})
+.catch((error) => {
+  swal("Hubo un error:", `${error}`, "error");
+});
+
+};
 
   return (
     <section id="contact" className="bg-gradient-to-br from-yellow-100 via-neutral-200 to-neutral-400 py-16 px-6 md:px-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
+      <h3 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
         Contáctanos
-      </h2>
+      </h3>
 
       <form
         onSubmit={handleSubmit}
@@ -67,6 +86,21 @@ const ContactForm = () => {
             }`}
           />
           {errors.nombre && <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="telefono" className="block text-gray-700 font-medium mb-2">Teléfono (opcional)</label>
+          <input
+            type="text"
+            name="telefono"
+            id="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              errors.telefono ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-yellow-500"
+            }`}
+          />
+          {errors.telefono && <p className="text-red-500 text-sm mt-1">{errors.telefono}</p>}
         </div>
 
         <div>

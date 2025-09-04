@@ -35,8 +35,8 @@ const Navbar = () => {
         <div className="text-white text-lg font-bold flex items-center">
           <HashLink to="/" title="Abuelo Mario" onClick={() => setIsOpen(false)}>
             <img
-              src="https://i.ibb.co/rGr7CKLL/img-abuelo.webp"
-              alt="Logo"
+              src="https://i.ibb.co/6cCDXxM2/img-abuelo.webp"
+              alt="abuelo mario"
               title="Abuelo Mario"
               className="inline-block rounded-full h-8 w-8 mr-2"
             />

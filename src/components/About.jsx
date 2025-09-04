@@ -1,12 +1,30 @@
-
 const About = () => {
   return (
-    <div id="about" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <h2 className="text-4xl font-bold mb-4 text-gray-800">Productos para barberia Abuelo Mario</h2>
-      <p className="text-2xl text-center font-semibold mb-2 text-gray-700">Desde Abuelo Mario Ofrecemos productos para barberias. Al probar nuestras pomadas y ceras para tus peinados, no solo estás eligiendo productos de alta calidad, sino que también estás apoyando a una marca que valora la autenticidad y la tradición. Cada uno de nuestros productos está cuidadosamente formulado para ofrecerte el mejor rendimiento, ayudándote a mantener tu estilo con confianza y facilidad.
-      </p>
-    </div>
+    <section id="about" className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8">
+        
+        {/* Imagen tipo radio */}
+        <div className="w-full md:w-auto rounded-xl overflow-hidden shadow-lg border-4 border-gray-300">
+          <img
+            src="https://i.ibb.co/1GfJs0Fh/abuelo-citroen.webp"
+            alt="Abuelo Mario Citroën"
+            title="Abuelo Mario"
+            className="w-auto h-80 object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+
+        {/* Texto */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h2 className="text-4xl font-bold mb-4 text-gray-800">
+            Productos para barbería Abuelo Mario
+          </h2>
+          <p className="text-xl font-medium text-gray-700 leading-relaxed">
+            Desde Abuelo Mario ofrecemos productos para barberías. Al probar nuestras pomadas y ceras para tus peinados, no solo estás eligiendo productos de alta calidad, sino que también estás apoyando a una marca que valora la autenticidad y la tradición. Cada uno de nuestros productos está cuidadosamente formulado para ofrecerte el mejor rendimiento, ayudándote a mantener tu estilo con confianza y facilidad.
+          </p>
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
 export default About;

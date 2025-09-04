@@ -13,6 +13,7 @@ const Products = () => {
             'Duración prolongada, resistente a la humedad',
             'Textura cremosa, fácil de aplicar',
         ],
+        alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
     },
     { 
         name: 'texturizador',
@@ -22,6 +23,7 @@ const Products = () => {
             'Aporta volumen y definición',
             'Ideal para estilos despeinados y naturales',
         ],
+                alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
     },
     {
         name: 'shaving gel',
@@ -31,6 +33,7 @@ const Products = () => {
             'Reduce la irritación y protege la piel',
             'Aroma fresco y agradable',
         ],
+              alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
     },
   ];
 
@@ -38,7 +41,7 @@ const Products = () => {
     <>
     <div id="products" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       <div className="text-4xl font-bold mb-10 text-gray-800">
-        Alguno de nuestros productos
+        Pomadas, ceras para el pelo, texturizadores, geles de afeitar
       </div>
 
       <div className="w-screen flex flex-col items-center justify-center md:flex-row gap-10">
@@ -49,7 +52,7 @@ const Products = () => {
                 className={`h-52 w-52 rounded-full flex border-2 border-yellow-500 flex-col items-center justify-center bg-yellow-600 cursor-pointer hover:brightness-75 ${hoveredIndex === index && "transition-all duration-300"}`}
                 onClick={() => hoveredIndex === null ? setHoveredIndex(index) : setHoveredIndex(null)}
             >
-              <p className="text-white font-semibold">{product.name}</p>
+              <p alt={product.alt} className="text-white font-semibold">{product.name}</p>
             </div>
 
             {hoveredIndex === index && (

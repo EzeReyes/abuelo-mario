@@ -7,16 +7,18 @@ import Sitemap from 'vite-plugin-sitemap'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),
-    Sitemap({
-      hostname: 'https://abuelomario.com.ar',
-      dynamicRoutes: [
-        '/', 
-        '/#products', 
-        '/#about', 
-        '/#contact'
-      ],
-      changefreq: 'monthly',
-      priority: 0.8,
-    }),
+Sitemap({
+  hostname: 'https://abuelomario.com.ar',
+  dynamicRoutes: [
+    '/', 
+    '/products',
+    '/about',
+    '/contact',
+    '/questions',
+    '/404'
+  ],
+  changefreq: 'monthly',
+  priority: 0.8,
+})
   ],
 })
