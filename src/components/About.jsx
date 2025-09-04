@@ -9,7 +9,7 @@ const About = () => {
             src="https://i.ibb.co/1GfJs0Fh/abuelo-citroen.webp"
             alt="Abuelo Mario Citroën"
             title="Abuelo Mario"
-            className="w-auto h-80 object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
 

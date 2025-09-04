@@ -40,7 +40,7 @@ const Products = () => {
   return (
     <>
     <div id="products" className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <div className="text-4xl font-bold mb-10 text-gray-800">
+      <div className="text-3xl text-center font-bold mb-10 text-gray-800">
         Pomadas, ceras para el pelo, texturizadores, geles de afeitar
       </div>
 
