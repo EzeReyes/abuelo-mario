@@ -25,7 +25,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className='width-navbar'>
+    <div className='width-standard'>
     <nav
       className={`fixed w-dvw top-0 z-10 p-4 transition-colors duration-300 ${
         isTransparent ? 'bg-transparent backdrop-blur-sm' : 'bg-zinc-400 bg-opacity-90'
