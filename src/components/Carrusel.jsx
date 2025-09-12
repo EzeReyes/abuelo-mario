@@ -35,7 +35,7 @@ const Carrusel = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 py-10 bg-white px-4 width-standard">
+    <div className="flex flex-col items-center justify-center gap-6 py-10 bg-white px-4 w-screen">
       <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl overflow-hidden rounded-xl backdrop-blur-md bg-white/60 border border-neutral-300 shadow-lg">
         <div
           className="flex transition-transform duration-700 ease-in-out"
