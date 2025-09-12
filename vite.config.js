@@ -11,9 +11,7 @@ Sitemap({
   hostname: 'https://abuelomario.com.ar',
   dynamicRoutes: [
     '/', 
-    '/products',
-    '/about',
-    '/contact',
+    '/all-products',
     '/questions',
     '/404'
   ],
