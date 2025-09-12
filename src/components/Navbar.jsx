@@ -25,8 +25,9 @@ const Navbar = () => {
   }, []);
 
   return (
+    <div className='width-navbar'>
     <nav
-      className={`fixed w-screen top-0 z-10 p-4 transition-colors duration-300 ${
+      className={`fixed w-dvw top-0 z-10 p-4 transition-colors duration-300 ${
         isTransparent ? 'bg-transparent backdrop-blur-sm' : 'bg-zinc-400 bg-opacity-90'
       }`}
     >
@@ -99,7 +100,7 @@ const Navbar = () => {
                 productsDropdownOpen ? 'opacity-100 max-h-96 translate-y-0' : 'opacity-0 max-h-0 -translate-y-2'
               }`}
             >
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ver todos los productos</li>
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
@@ -113,7 +114,7 @@ const Navbar = () => {
               location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
             }`}
           >
-            About
+            Acerca de
           </HashLink>
           <HashLink
             to="/#contact"
@@ -122,7 +123,7 @@ const Navbar = () => {
               location.pathname === '/questions' ? 'text-white hover:text-gray-300' : 'text-gray-800 hover:text-black'
             }`}
           >
-            Contact
+            Contacto
           </HashLink>
           <HashLink
             to="/questions"
@@ -162,7 +163,7 @@ const Navbar = () => {
                 mobileProductsOpen ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
               }`}
             > 
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ver todos los productos</li>
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
@@ -170,10 +171,10 @@ const Navbar = () => {
           </div>
 
           <HashLink to="/#about" title="Acerca de" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
-            About
+            Acerca de
           </HashLink>
           <HashLink to="/#contact" title="Contacto" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
-            Contact
+            Contacto
           </HashLink>
           <HashLink to="/questions" title="Preguntas Frecuentes" className="text-gray-800 font-bold hover:text-black" onClick={() => setIsOpen(false)}>
             Preguntas Frecuentes
@@ -181,6 +182,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    </div>
   );
 };
 

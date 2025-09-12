@@ -1,5 +1,19 @@
 import { useState } from "react";
 import swal from 'sweetalert';
+import { useMutation } from "@apollo/client/react";
+import { gql } from "@apollo/client";
+
+const CREAR_MENSAJE = gql`
+  mutation crearMensaje($input: MessageInput!) {
+    crearMensaje(input: $input) {
+      id
+      name
+      phone
+      email
+      message
+    }
+  }
+` 
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +22,7 @@ const ContactForm = () => {
     mensaje: "",
     telefono: ""
   });
-
+  const [crearMensaje] = useMutation(CREAR_MENSAJE)
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -35,6 +49,25 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const putMessage = async () => {
+    try {
+      const { nombre, email, mensaje, telefono } = formData;
+      const {data} = await crearMensaje({
+        variables: {
+          input: {
+            name: nombre,
+            email,
+            message: mensaje,
+            phone: telefono
+          }
+        }
+      });
+      console.log(data)        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" }); // Limpia el error al escribir
@@ -47,24 +80,26 @@ const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 const handleSubmit = (e) => {
   e.preventDefault();
   if (!validate()) return;
-
-  fetch('https://abuelo-mario-backend.onrender.com/api/contact', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData)
-})
-.then(() => {
-  swal("El mensaje se ha enviado Correctamente!", "Tu consulta se genero exitosamente", "success");
-  setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
-})
-.catch((error) => {
-  swal("Hubo un error:", `${error}`, "error");
-});
-
+  putMessage();
+  fetch('https://abuelo-mario-backend.onrender.com/api/contact',{
+    
+  // fetch('http://localhost:4000/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    swal("El mensaje se ha enviado Correctamente!", "Tu consulta se genero exitosamente", "success");
+    setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
+    setErrors({});
+  })
+  .catch((error) => {
+    swal("Hubo un error:", `${error}`, "error");
+  });
 };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-yellow-100 via-neutral-200 to-neutral-400 py-16 px-6 md:px-20">
+    <section id="contact" className="bg-gradient-to-t from-yellow-100 via-neutral-200 to-neutral-400 py-16 px-6 md:px-20">
       <h3 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
         Contáctanos
       </h3>

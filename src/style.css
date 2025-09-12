@@ -38,3 +38,15 @@
   text-shadow: 2px 2px 4px rgba(255, 230, 0, 0.781);
 }
 
+@keyframes fade-green {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-green {
+  animation: fade-in 1.0s ease-out forwards;
+}
+
+.width-navbar {
+      width: -webkit-fill-available;
+}

@@ -1,12 +1,12 @@
 import { HashLink } from "react-router-hash-link";
 const SectionOne = () => {
     return (
-        <section className="bg-gradient-to-br from-yellow-500 to-yellow-400 text-white py-20 px-4">
+        <section className="bg-gradient-to-br from-gray-500 to-white text-black py-20 px-4 width-navbar">
             <div className="opacity-0 animate-fade-in delay-200">
             <div className="flex flex-col md:flex-row items-center justify-around gap-8">
-            <img src="https://i.ibb.co/p6hr8fbx/img-barberia.webp" title="productos de barberia" alt="abuelo mario, pomadas, ceras para el pelo"  className="h-80 w-auto rounded-xl shadow-lg border-4 border-white" />
+            <img src="/images/silueta.png" title="productos de barberia" alt="abuelo mario, pomadas, ceras para el pelo"  className="h-90 w-auto" />
             <div className="flex flex-col gap-4 max-w-xl text-left">
-                <h1 className="text-xl md:text-2xl font-bold">
+                <h1 className="text-lg md:text-2xl font-bold">
                     Productos de barbería para el cuidado del pelo y la barba
                 </h1>
                 <p className="text-sm md:text-base text-gray-600">
@@ -15,7 +15,7 @@ const SectionOne = () => {
                 <p className="italic text-md md:text-lg">
                     Inspirados en la tradición del grooming masculino, creados para el presente.
                 </p>
-                <div className="text-2xl md:text-4xl font-medium">
+                <div className="text-lg md:text-4xl font-medium">
                     “Estilo que se siente. Pomadas, ceras y geles que lo hacen posible.”
                 </div>
                 <HashLink

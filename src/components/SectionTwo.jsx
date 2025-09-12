@@ -43,13 +43,13 @@ const SectionTwo = () => {
     return (
         <section
             ref={sectionRef}
-            className={`px-6 md:px-16 py-12 shadow-2xl bg-gradient-to-br from-yellow-100 via-neutral-300 to-neutral-500 animate-fade-out delay-200 transition-all duration-1000 ease-out transform
+            className={`px-6 md:px-16 py-12 bg-gradient-to-t from-neutral-400 via-neutral-200 to-yellow-100 animate-fade-out delay-200 transition-all duration-1000 ease-out transform
                 ${isVisible
                 ? 'opacity-100 translate-y-0 md:translate-x-0'
                 : 'opacity-0 translate-y-10 md:translate-x-20'
                 }`}
             >
-            <h3 className="text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-12">
+            <h3 className="text-lg md:text-4xl font-semibold text-center text-gray-800 mb-12">
             Clientes que confían en nuestra trayectoria
         </h3>
         {clientes.map((cliente, index) => (
@@ -65,7 +65,7 @@ const SectionTwo = () => {
                 className="w-30 h-full rounded-sm md:w-1/3 md:h-auto object-cover"
                 />
                 <div className="p-6 md:p-8 w-full md:w-2/3">
-                <p className="text-lg md:text-xl text-gray-700 italic mb-4">
+                <p className="text-md md:text-xl text-gray-700 italic mb-4">
                     "{cliente.review}"
                 </p>
                 <p className="text-md md:text-lg font-semibold text-gray-900 text-right">

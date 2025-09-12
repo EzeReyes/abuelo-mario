@@ -3,6 +3,7 @@ import Layout from './pages/Layout'
 import Home from './pages/Home'
 import Questions from './pages/Questions'
 import NotFound from './pages/NotFound'
+import AllProducts from './pages/AllProducts'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/questions" element={<Questions />} />
+        <Route path='/all-products' element ={<AllProducts />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

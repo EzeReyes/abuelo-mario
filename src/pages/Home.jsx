@@ -7,13 +7,14 @@ import InstagramEmbebed from '../components/InstagramEmbebed'
 import SectionTwo from '../components/SectionTwo'
 import ContactForm from '../components/ContactForm'
 import BtnWsp from '../components/BtnWsp'
+import New from '../components/New'
 
 export default function Home() {
   return (
     <>
       <SectionOne />
       <About />
-      <SaltodeLinea />
+      <New />
       <Products />
       <TipsSection />
       <InstagramEmbebed />
