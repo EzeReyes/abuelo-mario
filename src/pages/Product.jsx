@@ -1,12 +1,11 @@
 import BtnWsp from "../components/BtnWsp";
 import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client/react";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
-
-const OBTENER_PRODUCTOS = gql `
-    query obtenerProductos {
-        obtenerProductos {
+const OBTENER_PRODUCTO = gql `
+    query obtenerProducto($id: ID!) {
+        obtenerProducto(id: $id) {
         id
         name
         imagen  
@@ -19,34 +18,34 @@ const OBTENER_PRODUCTOS = gql `
 }
 `
 
-const AllProducts = () => {
+const Product = () => {
 
-    const {data, loading, error} = useQuery(OBTENER_PRODUCTOS);
+    const route = useParams();
+    const {id} = route;
 
-    if (loading) return "Cargando productos...";
-    if(data) console.log(data?.obtenerProductos)
-    if (error) return console.log(error)
+  const { data, loading, error } = useQuery(OBTENER_PRODUCTO, {
+    variables: { id },
+    skip: !id, // Evita ejecutar la consulta si no hay id
+  });
 
-    const productos = data?.obtenerProductos;
-    return (
+  const producto = data?.obtenerProducto || [];
+
+  if (loading) return <p className="text-center py-10">Cargando el producto...</p>;
+  if (error) return <p className="text-center py-10 text-red-600">Error al cargar el producto: {error.message}</p>;    return (
         <div className="m-4 p-10 flex flex-col gap-4 items-center justify-center">
             <section className="py-16 px-4 md:px-12 bg-white">
-
                 <div className="flex flex-col gap-12">
-                    {productos.map((producto) => (
                     <div
                         key={producto.id}
                         className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-gray-50 rounded-2xl shadow-lg p-6 md:p-8"
                     >
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
-                        <Link to={`/${producto.id}`}>                        
                         <img
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"
                         />
-                        </Link>
                         </div>
 
                         {/* Datos */}
@@ -75,7 +74,6 @@ const AllProducts = () => {
                         </a>            
                         </div>
                     </div>
-                    ))}
                 </div>
             </section>
             <BtnWsp />
@@ -83,4 +81,4 @@ const AllProducts = () => {
     )
 }
 
-export default AllProducts;
+export default Product;

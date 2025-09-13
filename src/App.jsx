@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Questions from './pages/Questions'
 import NotFound from './pages/NotFound'
 import AllProducts from './pages/AllProducts'
+import Product from './pages/Product'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/questions" element={<Questions />} />
         <Route path='/all-products' element ={<AllProducts />} />
         <Route path="*" element={<NotFound />} />
+        <Route path='/:id' element={<Product />} />
       </Routes>
     </Layout>
   )

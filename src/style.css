@@ -47,6 +47,6 @@
   animation: fade-in 1.0s ease-out forwards;
 }
 
-.width-navbar {
+.width-standard {
       width: -webkit-fill-available;
 }
