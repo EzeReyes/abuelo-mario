@@ -39,7 +39,7 @@ function App() {
   
 
   return (
-    <Layout productos={productos} loading={loading} error={error} >
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />}  />
         <Route path="/productos/:tipo" element={<ProductType productos={productos} />} />

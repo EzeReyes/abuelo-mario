@@ -77,7 +77,10 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-700" />
         <div className="text-center mt-6 text-gray-400">
-            &copy; {new Date().getFullYear()} Abuelo Mario. All rights reserved.
+            &copy; {new Date().getFullYear()} Abuelo Mario. Todos los derechos reservados.
+        </div>
+        <div className="text-center mt-6 text-gray-400">
+            Powered by<HashLink target="_blank" to="https://landing-dev-mauve.vercel.app/"> Ezequiel Reyes</HashLink>
         </div>
     </footer>
     );

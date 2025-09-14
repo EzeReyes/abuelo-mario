@@ -13,7 +13,8 @@ Sitemap({
     '/', 
     '/all-products',
     '/questions',
-    '/404'
+    '/productos/cera',
+    '/productos/pomada'
   ],
   changefreq: 'monthly',
   priority: 0.8,
