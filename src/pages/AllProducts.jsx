@@ -1,35 +1,14 @@
 import BtnWsp from "../components/BtnWsp";
-import { gql } from "@apollo/client";
-import { useQuery } from "@apollo/client/react";
 import { Link } from "react-router-dom";
+import Encabezado from '../components/Encabezado';
 
 
-const OBTENER_PRODUCTOS = gql `
-    query obtenerProductos {
-        obtenerProductos {
-        id
-        name
-        imagen  
-        description
-        fijacion
-        efecto
-        aroma
-        tipo
-        }
-}
-`
-
-const AllProducts = () => {
-
-    const {data, loading, error} = useQuery(OBTENER_PRODUCTOS);
-
+const AllProducts = ({productos, loading, error}) => {
     if (loading) return "Cargando productos...";
-    if(data) console.log(data?.obtenerProductos)
     if (error) return console.log(error)
-
-    const productos = data?.obtenerProductos;
     return (
         <div className="m-4 p-10 flex flex-col gap-4 items-center justify-center">
+            <Encabezado titulo={"Todos los productos"} />
             <section className="py-16 px-4 md:px-12 bg-white">
 
                 <div className="flex flex-col gap-12">

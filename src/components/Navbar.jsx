@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-const Navbar = () => {
+const Navbar = ({productos, loading, error}) => {
   const [isTransparent, setIsTransparent] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
@@ -23,6 +23,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+      if (loading) return "Cargando productos...";
+      if (error) return console.log(error)
+      const cera = productos.filter((producto) => producto.tipo === "CERA");    
+      const pomada = productos.filter((producto) => producto.tipo === "POMADA");    
 
   return (
     <div className='width-standard'>
@@ -101,9 +106,9 @@ const Navbar = () => {
               }`}
             >
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to={`/productos/pomada`}>Pomada</HashLink></li>
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to={`/productos/cera`}>Cera</HashLink></li>
+              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink>Shaving Gel</HashLink></li>
             </ul>
           </div>
 
@@ -164,9 +169,9 @@ const Navbar = () => {
               }`}
             > 
               <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pomada</li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Texturizador</li>
-              <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</li>
+              <Link className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" to="/product-type" tipo={pomada}>Pomada</Link>
+              <Link className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" to="/product-type" tipo={cera}>Cera</Link>
+              <Link className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shaving Gel</Link>
             </ul>
           </div>
 

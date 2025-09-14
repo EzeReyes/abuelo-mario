@@ -1,10 +1,11 @@
 import BtnWsp from "../components/BtnWsp";
+import Encabezado from '../components/Encabezado';
 
 const Questions = () => {
     return (
         <div className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
             <div id="questions" className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-extrabold my-8 text-center">Preguntas Frecuentes</h2>
+                <Encabezado titulo={"Preguntas Frecuentes"} className="hover:text-white" />
                 <div className="space-y-6">
                     <div id="aplicacion-cera"><hr className="my-6 border-gray-700" />
                     </div>
