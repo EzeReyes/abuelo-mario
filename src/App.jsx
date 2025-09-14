@@ -27,7 +27,10 @@ const OBTENER_PRODUCTOS = gql `
 
 function App() {
 
-      const {data, loading, error} = useQuery(OBTENER_PRODUCTOS);
+      const {data, loading, error} = useQuery(OBTENER_PRODUCTOS, {
+            fetchPolicy: "cache-and-network", // 👈 cambiá acá
+      }
+      );
   
       if (loading) return "Cargando productos...";
       if (error) return console.log(error)
@@ -38,7 +41,7 @@ function App() {
   return (
     <Layout productos={productos} loading={loading} error={error} >
       <Routes>
-        <Route path="/" element={<Home productos={productos} loading={loading} error={error} />}  />
+        <Route path="/" element={<Home />}  />
         <Route path="/productos/:tipo" element={<ProductType productos={productos} />} />
         <Route path="/questions" element={<Questions />} />
         <Route path='/all-products' element ={<AllProducts productos={productos} loading={loading} error={error} />}  />

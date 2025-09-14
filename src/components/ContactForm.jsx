@@ -77,25 +77,30 @@ const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_KEY = import.meta.env.VITE_TEMPLATE_KEY;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
-const handleSubmit = (e) => {
+const [isSubmitting, setIsSubmitting] = useState(false);
+
+const handleSubmit = async (e) => {
   e.preventDefault();
-  if (!validate()) return;
-  putMessage();
-  fetch('https://abuelo-mario-backend.onrender.com/api/contact',{
-    
-  // fetch('http://localhost:4000/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData)
-  })
-  .then(() => {
-    swal("El mensaje se ha enviado Correctamente!", "Tu consulta se genero exitosamente", "success");
+  if (!validate() || isSubmitting) return;
+
+  setIsSubmitting(true);
+
+  try {
+    await putMessage();
+    await fetch("https://abuelo-mario-backend.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    swal("El mensaje se ha enviado Correctamente!", "Tu consulta se generó exitosamente", "success");
     setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
     setErrors({});
-  })
-  .catch((error) => {
+  } catch (error) {
     swal("Hubo un error:", `${error}`, "error");
-  });
+  } finally {
+    setIsSubmitting(false);
+  }
 };
 
   return (
@@ -170,9 +175,14 @@ const handleSubmit = (e) => {
 
         <button
           type="submit"
-          className="w-full bg-yellow-500 text-white font-semibold py-3 rounded-lg hover:bg-yellow-600 transition duration-300"
+          disabled={isSubmitting}
+          className={`w-full font-semibold py-3 rounded-lg transition duration-300 ${
+            isSubmitting
+              ? "bg-gray-400 text-white cursor-not-allowed"
+              : "bg-yellow-500 text-white hover:bg-yellow-600"
+          }`}
         >
-          Enviar mensaje
+          {isSubmitting ? "Enviando..." : "Enviar mensaje"}
         </button>
       </form>
     </section>

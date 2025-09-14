@@ -13,7 +13,7 @@ const Encabezado = ({titulo}) => {
             >
             Home
             </Link>            
-                <span className='text-gray-500'>-</span>
+                <span className='text-gray-500'> / </span>
             <Link 
             className={`${titulo === q ? 'hover:text-white' : 'hover:text-gray-600'} text-gray-500 hover:underline`}
             to={'.'}
