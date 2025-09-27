@@ -32,7 +32,6 @@ function App() {
       }
       );
   
-      if (loading) return "Cargando productos...";
       if (error) return console.log(error)
   
       const productos = data?.obtenerProductos;

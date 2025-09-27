@@ -80,7 +80,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Abuelo Mario. Todos los derechos reservados.
         </div>
         <div className="text-center mt-6 text-gray-400">
-            Powered by<HashLink target="_blank" to="https://landing-dev-mauve.vercel.app/"> Ezequiel Reyes</HashLink>
+            Powered by<HashLink target="_blank" to="https://ezequiel-reyes.vercel.app/"> Ezequiel Reyes</HashLink>
         </div>
     </footer>
     );
