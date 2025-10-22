@@ -9,7 +9,7 @@ const TipsSection = () => {
         {/* Pomadas */}
         <div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1757526125/abuelo-mario-images/animales/coco_ywiwu5.png"
+            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/coco_ywiwu5_g4jmw2.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
           />
@@ -24,7 +24,7 @@ const TipsSection = () => {
         {/* Shaving Gel */}
         <div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1757526125/abuelo-mario-images/animales/leon_wvxuis.png"
+            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/leon_wvxuis_gkt4gc.webp"
             className="absolute top-0 left-16 transform -translate-x-1/2 -translate-y-1/2 h-30 w-auto"
             alt="pomadas abuelo mario"
           />
@@ -39,7 +39,7 @@ const TipsSection = () => {
         {/* Texturizador */}
 <div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1757527837/abuelo-mario-images/animales/mono_lvfwia.png"
+            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/mono_lvfwia_euveaw.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
           />

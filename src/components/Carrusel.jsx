@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Carrusel = () => {
   const slides = [
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525082/abuelo-mario-images/carrusel/uva-first_isbziv.png", nombre: "Uva First", id: "68c2078ff993d0ce80db2ab4"  },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525081/abuelo-mario-images/carrusel/strong-neon-water_fpcyte.png", nombre: "Strong Neon Water", id: "68c4dc7f650a206408ddbc81" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525079/abuelo-mario-images/carrusel/papaya-young_br3dig.png", nombre: "Papaya Young", id: "68c207d7f993d0ce80db2ab6" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525079/abuelo-mario-images/carrusel/native_cqlclh.png", nombre: "Native", id: "68c4d8d2650a206408ddbc73" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525078/abuelo-mario-images/carrusel/marine_atuk17.png", nombre: "Marine", id: "68c4d940650a206408ddbc79" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525077/abuelo-mario-images/carrusel/manzana-ink_ytidzz.png", nombre: "Manzana Ink", id: "68c2070bf993d0ce80db2ab0" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525076/abuelo-mario-images/carrusel/gum-grease_ofziot.png", nombre: "Gum Grease", id: "68c208baf993d0ce80db2aba" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525076/abuelo-mario-images/carrusel/crystal_d4gs5u.png", nombre: "Crystal", id: "68c4d920650a206408ddbc77" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525075/abuelo-mario-images/carrusel/desert_pkegbq.png", nombre: "Desert", id: "68c4d904650a206408ddbc75" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525076/abuelo-mario-images/carrusel/chocolate-cookies_ws0zcu.png", nombre: "Chocolate Cookies", id: "68c206f4f993d0ce80db2aae" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525075/abuelo-mario-images/carrusel/chicle-glow_bpiksb.png", nombre: "Chicle Glow", id: "68c2064ef993d0ce80db2aaa" },
-    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757525075/abuelo-mario-images/carrusel/black-pearl_f0wzi2.png", nombre: "Black Pearl", id: "68c2088bf993d0ce80db2ab8" }
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757544076/abuelo-mario-images/uva-first_heea35.webp", nombre: "Uva First", id: "68c2078ff993d0ce80db2ab4"  },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757731835/abuelo-mario-images/strong-neon-water_e4z047.webp", nombre: "Strong Neon Water", id: "68c4dc7f650a206408ddbc81" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757544076/abuelo-mario-images/papaya-young_i2rphf.webp", nombre: "Papaya Young", id: "68c207d7f993d0ce80db2ab6" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757730789/abuelo-mario-images/native_m9dxr7.webp", nombre: "Native", id: "68c4d8d2650a206408ddbc73" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757730789/abuelo-mario-images/marine_y2p54o.webp", nombre: "Marine", id: "68c4d940650a206408ddbc79" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757544075/abuelo-mario-images/manzana-ink_odwpr7.webp", nombre: "Manzana Ink", id: "68c2070bf993d0ce80db2ab0" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757543806/abuelo-mario-images/gum-grease_cpxkso.webp", nombre: "Gum Grease", id: "68c208baf993d0ce80db2aba" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757730789/abuelo-mario-images/crystal_bkrguc.webp", nombre: "Crystal", id: "68c4d920650a206408ddbc77" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757730789/abuelo-mario-images/desert_uezqjc.webp", nombre: "Desert", id: "68c4d904650a206408ddbc75" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757543843/abuelo-mario-images/chocolate-cookies_oblt6u.webp", nombre: "Chocolate Cookies", id: "68c206f4f993d0ce80db2aae" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757543843/abuelo-mario-images/chicle-glow_naxhzk.webp", nombre: "Chicle Glow", id: "68c2064ef993d0ce80db2aaa" },
+    { src: "https://res.cloudinary.com/dbctwitmb/image/upload/v1757543805/abuelo-mario-images/black-pearl_j7dv8f.webp", nombre: "Black Pearl", id: "68c2088bf993d0ce80db2ab8" }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

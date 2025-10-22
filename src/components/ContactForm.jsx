@@ -49,33 +49,40 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const putMessage = async () => {
-    try {
-      const { nombre, email, mensaje, telefono } = formData;
-      const {data} = await crearMensaje({
-        variables: {
-          input: {
-            name: nombre,
-            email,
-            message: mensaje,
-            phone: telefono
-          }
+const putMessage = async () => {
+  const { nombre, email, mensaje, telefono } = formData;
+
+  try {
+    const { data } = await crearMensaje({
+      variables: {
+        input: {
+          name: nombre,
+          email,
+          message: mensaje,
+          phone: telefono
         }
-      });
-      console.log(data)        
-      } catch (error) {
-        console.log(error)
       }
+    });
+
+    if (!data || !data.crearMensaje) {
+      throw new Error("No se pudo crear el mensaje");
     }
+
+    return data.crearMensaje;
+  } catch (error) {
+    console.error("Error en putMessage:", error.message);
+    throw error; // Propaga el error para que handleSubmit lo capture
+  }
+};
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" }); // Limpia el error al escribir
   };
 
-const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
-const TEMPLATE_KEY = import.meta.env.VITE_TEMPLATE_KEY;
-const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+// const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+// const TEMPLATE_KEY = import.meta.env.VITE_TEMPLATE_KEY;
+// const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -87,20 +94,22 @@ const handleSubmit = async (e) => {
 
   try {
     await putMessage();
-    await fetch("https://abuelo-mario-backend.onrender.com/api/contact", {
+        swal("El mensaje se ha enviado correctamente!", "Tu consulta se generó exitosamente", "success");
+    setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
+    setErrors({});
+    setIsSubmitting(false);
+
+    await fetch("http://localhost:4000/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
 
-    swal("El mensaje se ha enviado Correctamente!", "Tu consulta se generó exitosamente", "success");
-    setFormData({ nombre: "", email: "", mensaje: "", telefono: "" });
-    setErrors({});
   } catch (error) {
-    swal("Hubo un error:", `${error}`, "error");
-  } finally {
-    setIsSubmitting(false);
-  }
+    console.error("Error al enviar el mensaje:", error);
+        swal("Error al enviar el mensaje", "Por favor, intenta nuevamente más tarde.", "error");
+  } 
+  
 };
 
   return (
