@@ -99,7 +99,7 @@ const handleSubmit = async (e) => {
     setErrors({});
     setIsSubmitting(false);
 
-    await fetch(  'https://abuelo-mario-backend.onrender.com/api/contact', {
+    await fetch(  '/api/contact', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
