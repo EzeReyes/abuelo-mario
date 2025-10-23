@@ -1,7 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 const SectionOne = () => {
     return (
-        <section className="bg-gradient-to-br from-gray-500 to-white text-black py-20 px-4 width-navbar">
+        <section className="bg-linear-to-br from-gray-500 to-white text-black py-20 px-4 width-navbar">
             <div className="opacity-0 animate-fade-in delay-200">
             <div className="flex flex-col md:flex-row items-center justify-around gap-8">
             <img src="/images/silueta2.webp" title="productos de barberia" alt="abuelo mario, pomadas, ceras para el pelo"  className="h-90 w-auto" />

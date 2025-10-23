@@ -1,12 +1,12 @@
 const About = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center p-6 bg-gradient-to-bl from-white to-gray-500">
+    <section id="about" className="min-h-screen flex items-center justify-center p-6 bg-linear-to-bl from-white to-gray-500">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-center gap-8">
         
         {/* Imagen tipo radio */}
         <div className="w-full md:w-auto rounded-xl overflow-hidden shadow-lg border-4 border-gray-300">
           <img
-            src="https://i.ibb.co/1GfJs0Fh/abuelo-citroen.webp"
+            src="/images/abuelo-citroen.webp"
             alt="Abuelo Mario Citroën"
             title="Abuelo Mario"
             className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"

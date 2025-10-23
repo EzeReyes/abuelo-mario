@@ -7,9 +7,9 @@ const TipsSection = () => {
 
       <div className="grid gap-30 md:grid-cols-3 md:gap-10 max-w-6xl mx-auto">
         {/* Pomadas */}
-        <div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
+        <div className="relative bg-linear-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/coco_ywiwu5_g4jmw2.webp"
+            src="/images/coco_ywiwu5_g4jmw2.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
           />
@@ -22,9 +22,9 @@ const TipsSection = () => {
         </div>
 
         {/* Shaving Gel */}
-        <div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
+        <div className="relative bg-linear-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/leon_wvxuis_gkt4gc.webp"
+            src="/images/leon_wvxuis_gkt4gc.webp"
             className="absolute top-0 left-16 transform -translate-x-1/2 -translate-y-1/2 h-30 w-auto"
             alt="pomadas abuelo mario"
           />
@@ -37,9 +37,9 @@ const TipsSection = () => {
         </div>
 
         {/* Texturizador */}
-<div className="relative bg-gradient-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
+<div className="relative bg-linear-to-br from-yellow-50 via-neutral-100 to-neutral-300 shadow-xl rounded-3xl border-l-8 border-yellow-500">
           <img
-            src="https://res.cloudinary.com/dbctwitmb/image/upload/v1761133995/mono_lvfwia_euveaw.webp"
+            src="/images/mono_lvfwia_euveaw.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
           />

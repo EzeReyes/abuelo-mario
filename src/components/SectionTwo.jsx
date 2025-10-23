@@ -28,14 +28,14 @@ const SectionTwo = () => {
             review:
                 "Hace 6 meses abrí mi barbería y confié en los productos del Abuelo Mario. La verdad, más que feliz por los resultados: los clientes felices, al igual que yo. Son los mejores 🔥👌",
             image:
-                "https://i.ibb.co/yn5KSB7r/img-capitan.webp",
+                "/images/img-capitan.webp",
             alt: "Reseñas de Clientes",
         },
         {
             name: "El Showroom del Barbero",
             review: "Encontra nuestros mejores productos en El Showroom del Barbero",
             image:
-                "https://i.ibb.co/Xr2Xq2CF/img-showroom.webp",
+                "/images/img-showroom.webp",
             alt: "El Showroom del Barbero",
         },
     ];
@@ -43,7 +43,7 @@ const SectionTwo = () => {
     return (
         <section
             ref={sectionRef}
-            className={`px-6 md:px-16 py-12 bg-gradient-to-t from-neutral-400 via-neutral-200 to-yellow-100 animate-fade-out delay-200 transition-all duration-1000 ease-out transform
+            className={`px-6 md:px-16 py-12 bg-linear-to-t from-neutral-400 via-neutral-200 to-yellow-100 animate-fade-out delay-200 transition-all duration-1000 ease-out transform
                 ${isVisible
                 ? 'opacity-100 translate-y-0 md:translate-x-0'
                 : 'opacity-0 translate-y-10 md:translate-x-20'
