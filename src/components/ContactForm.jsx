@@ -99,11 +99,23 @@ const handleSubmit = async (e) => {
     setErrors({});
     setIsSubmitting(false);
 
-    await fetch(  '/api/contact', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+try {
+const response = await fetch('https://abuelo-mario-backend.onrender.com/api/contact', {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
+const result = await response.json();
+console.log("Respuesta del backend:", result);
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Error ${response.status}: ${errorText}`);
+  }
+} catch (error) {
+  console.error("Error en fetch:", error);
+  swal("Error al enviar el mensaje", "No se pudo conectar con el servidor.", "error");
+}
 
   } catch (error) {
     console.error("Error al enviar el mensaje:", error);
