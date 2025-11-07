@@ -12,6 +12,7 @@ import ProductType from './pages/ProductType'
 const OBTENER_PRODUCTOS = gql `
     query obtenerProductos {
         obtenerProductos {
+        idString
         id
         name
         imagen  
@@ -35,6 +36,7 @@ function App() {
       if (error) return console.log(error)
   
       const productos = data?.obtenerProductos;
+      console.log(`Estos son los productos ${productos}`)
   
 
   return (

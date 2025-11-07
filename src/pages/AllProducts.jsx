@@ -14,12 +14,12 @@ const AllProducts = ({productos, loading, error}) => {
                 <div className="flex flex-col gap-12">
                     {productos.map((producto) => (
                     <div
-                        key={producto.id}
+                        key={producto.idString}
                         className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-gray-50 rounded-2xl shadow-lg p-6 md:p-8"
                     >
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
-                        <Link to={`/${producto.id}`}>                        
+                        <Link to={`/${producto.idString}`}>                        
                         <img
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
