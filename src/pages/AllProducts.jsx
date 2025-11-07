@@ -24,6 +24,7 @@ const AllProducts = ({productos, loading, error}) => {
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"
+                            loading="lazy"
                         />
                         </Link>
                         </div>
