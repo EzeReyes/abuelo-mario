@@ -1,6 +1,6 @@
 const New = () => {
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-10 bg-gradient-to-br from-green-600 via-lime-700 to-yellow-300">
+    <div className="flex flex-col items-center justify-center px-4 py-10 bg-linear-to-br from-green-600 via-lime-700 to-yellow-300">
       <h2 className="text-yellow-300 text-center text-xl md:text-4xl font-semibold uppercase mb-8">
         Descubrí lo nuevo
       </h2>
@@ -8,7 +8,7 @@ const New = () => {
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 max-w-6xl w-full">
         {/* Texto */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 max-w-md">
-          <h3 className="text-xl md:text-4xl font-bold bg-gradient-to-r from-yellow-300 via-green-500 to-green-500 bg-clip-text text-transparent animate-fade-green">
+          <h3 className="text-xl md:text-4xl font-bold bg-linear-to-r from-yellow-300 via-green-500 to-green-500 bg-clip-text text-transparent animate-fade-green">
             PEGAJOSITO ABUELO MARIO
           </h3>
           <p className="text-base md:text-xl font-medium text-yellow-100">

@@ -45,8 +45,10 @@ const Carrusel = () => {
             <Link to={`/${slide.id}`}                  
               key={slide.id}
               className="min-w-full flex flex-col items-center justify-center px-4 py-6 text-center"
+              title={slide.nombre}
             >
               <img
+                title={slide.nombre}
                 src={slide.src}
                 alt={slide.nombre}
                 className={`w-full max-w-xs object-contain transition-opacity duration-700 transform ${

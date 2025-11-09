@@ -20,9 +20,9 @@ const AllProducts = ({productos, loading, error}) => {
                     >
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
-                        <Link title={`/${producto.idString}`} to={`/${producto.idString}`}>                        
+                        <Link title={`${producto.tipo} + ${producto.nombre}`} to={`/${producto.idString}`}>                        
                         <img
-                            title={producto.name}
+                            title={`${producto.tipo} + ${producto.nombre}`}                            
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"

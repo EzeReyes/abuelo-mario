@@ -12,6 +12,7 @@ const TipsSection = () => {
             src="/images/coco_ywiwu5_g4jmw2.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
+            title="pomadas abuelo mario"
           />
           <h3 className="text-lg md:text-xl text-center font-semibold text-gray-800 p-4">Pomadas</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm leading-relaxed p-4">
@@ -27,6 +28,7 @@ const TipsSection = () => {
             src="/images/leon_wvxuis_gkt4gc.webp"
             className="absolute top-0 left-16 transform -translate-x-1/2 -translate-y-1/2 h-30 w-auto"
             alt="pomadas abuelo mario"
+            title="pomadas abuelo mario"
           />
           <h3 className="text-lg md:text-xl text-center font-semibold text-gray-800 p-4">Shaving Gel</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm leading-relaxed p-4">
@@ -42,6 +44,7 @@ const TipsSection = () => {
             src="/images/mono_lvfwia_euveaw.webp"
             className="absolute top-0 left-12 transform -translate-x-1/2 -translate-y-1/2 h-40 w-auto"
             alt="pomadas abuelo mario"
+            title="pomadas abuelo mario"
           />
           <h3 className="text-lg md:text-xl text-center font-semibold text-gray-800 p-4">Texturizador</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-2 text-sm leading-relaxed p-4">

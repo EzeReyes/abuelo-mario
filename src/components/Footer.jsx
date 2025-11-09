@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 
 
@@ -14,7 +13,7 @@ const Footer = () => {
         <div className="text-white text-lg font-bold flex items-center flex-col gap-1">
             <div>
                 <img
-                src="https://i.ibb.co/6cCDXxM2/img-abuelo.webp"
+                src="/images/img-abuelo.png"
                 alt="Logo"
                 title="Logo Abuelo Mario"
                 className="inline-block rounded-full h-8 w-8 mr-2"

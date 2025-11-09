@@ -43,7 +43,7 @@ const Product = () => {
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
                         <img
-                            title={producto.name}
+                            title={`${producto.tipo} + ${producto.nombre}`}                            
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"
