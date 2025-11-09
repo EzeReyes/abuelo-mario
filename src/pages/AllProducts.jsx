@@ -4,12 +4,13 @@ import Encabezado from '../components/Encabezado';
 
 
 const AllProducts = ({productos, loading, error}) => {
-    if (loading) return "Cargando productos...";
-    if (error) return console.log(error)
     return (
-        <div className="m-4 p-10 flex flex-col gap-4 items-center justify-center">
+        <div className="m-4 p-10 flex flex-col gap-4 items-center min-h-screen justify-center">
             <Encabezado titulo={"Todos los productos"} />
             <section className="py-16 px-4 md:px-12 bg-white">
+
+                { loading && <p className="flex items-center justify-center text-blue-950 text-2xl font-bold">Cargando productos abuelo Mario...</p>}
+                { error && <p className="flex items-center justify-center text-red-600 text-2xl font-bold">Se produjo un error al cargar los productos</p>}
 
                 <div className="flex flex-col gap-12">
                     {productos.map((producto) => (
@@ -19,8 +20,9 @@ const AllProducts = ({productos, loading, error}) => {
                     >
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
-                        <Link to={`/${producto.idString}`}>                        
+                        <Link title={`/${producto.idString}`} to={`/${producto.idString}`}>                        
                         <img
+                            title={producto.name}
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"

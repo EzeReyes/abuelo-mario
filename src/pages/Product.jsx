@@ -29,11 +29,12 @@ const Product = () => {
   });
 
   const producto = data?.obtenerProducto || [];
-
-  if (loading) return <p className="text-center py-10">Cargando el producto...</p>;
-  if (error) return <p className="text-center py-10 text-red-600">Error al cargar el producto: {error.message}</p>;    return (
-        <div className="m-4 p-10 flex flex-col gap-4 items-center justify-center">
+  return(
+        <div className="m-4 p-10 flex flex-col gap-4 min-h-screen items-center justify-center">
             <section className="py-16 px-4 md:px-12 bg-white">
+                { loading && <p className="flex items-center justify-center text-blue-950 text-2xl font-bold">Cargando productos abuelo Mario...</p>}
+                { error && <p className="flex items-center justify-center text-red-600 text-2xl font-bold">Se produjo un error al cargar los productos</p>}
+
                 <div className="flex flex-col gap-12">
                     <div
                         key={producto.id}
@@ -42,6 +43,7 @@ const Product = () => {
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
                         <img
+                            title={producto.name}
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"

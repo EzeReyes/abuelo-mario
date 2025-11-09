@@ -7,7 +7,7 @@ const ProductType = ({ productos }) => {
   const { tipo } = useParams(); // por ejemplo: "cera", "pomada"
   const productosFiltrados = productos.filter(p => p.tipo.toLowerCase() === tipo.toLowerCase());
   return (
-    <div className="m-4 p-10 flex flex-col gap-4 items-center justify-center">
+    <div className="m-4 p-10 flex flex-col gap-4 items-center min-h-screen justify-center">
       <Encabezado titulo={tipo} />
       <section className="py-16 px-4 md:px-12 bg-white">
         <div className="flex flex-col gap-12">
@@ -18,11 +18,13 @@ const ProductType = ({ productos }) => {
             >
               {/* Imagen */}
               <div className="w-full md:w-1/2">
-                <Link to={`/${producto.idString}`}>
+                <Link title={`/${producto.idString}`} to={`/${producto.idString}`}>
                   <img
+                    title={producto.name}
                     src={producto.imagen}
                     alt={`producto ${producto.name}`}
                     className="w-full h-auto rounded-xl object-cover shadow-md"
+                    loading="lazy"
                   />
                 </Link>
               </div>

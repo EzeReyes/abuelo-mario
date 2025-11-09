@@ -3,40 +3,6 @@ import { HashLink } from 'react-router-hash-link';
 import Carrusel from './Carrusel';
 
 const Products = () => {
-  //  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  //  const products = [
-  //    {
-  //        name: 'pomada',
-  //        features: [
-  //            'Fijación media a fuerte (según base: agua o aceite)',
-  //            'Acabado brillante o natural',
-  //            'Duración prolongada, resistente a la humedad',
-  //            'Textura cremosa, fácil de aplicar',
-  //        ],
-  //        alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
-  //    },
-  //    { 
-  //        name: 'texturizador',
-  //        features: [
-  //            'Fijación ligera a media',
-  //            'Acabado mate',
-  //            'Aporta volumen y definición',
-  //            'Ideal para estilos despeinados y naturales',
-  //        ],
-  //                alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
-  //    },
-  //    {
-  //        name: 'shaving gel',
-  //        features: [
-  //            'Fórmula hidratante con aloe vera y vitamina E',
-  //            'Proporciona un afeitado suave y cómodo',
-  //            'Reduce la irritación y protege la piel',
-  //            'Aroma fresco y agradable',
-  //        ],
-  //              alt: 'pomada, cera para el pelo, texturizador, gel de afeitar',
-  //    },
-  //  ];
 
   return (
     <>
