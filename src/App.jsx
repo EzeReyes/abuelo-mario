@@ -35,9 +35,7 @@ function App() {
   
       if (error) return console.log(error)
   
-      const productos = data?.obtenerProductos;
-      console.log(`Estos son los productos ${productos}`)
-  
+      const productos = data?.obtenerProductos;  
 
   return (
     <Layout>
