@@ -18,13 +18,18 @@ const ProductType = ({ productos }) => {
             >
               {/* Imagen */}
               <div className="w-full md:w-1/2">
-                <Link title={`${producto.tipo} + ${producto.nombre}`} to={`/${producto.idString}`}>
+                <Link 
+                  aria-label={`Ver detalles del producto ${producto.name}`}
+                  title={`${producto.tipo} + ${producto.name}`} 
+                  to={`/${producto.idString}`}
+                  >
                   <img
-                    title={`${producto.tipo} + ${producto.nombre}`}                    
+                    title={`${producto.tipo} + ${producto.name}`}                    
                     src={producto.imagen}
                     alt={`producto ${producto.name}`}
                     className="w-full h-auto rounded-xl object-cover shadow-md"
                     loading="lazy"
+                    aria-label={`Ver detalles del producto ${producto.name}`}
                   />
                 </Link>
               </div>
@@ -48,6 +53,7 @@ const ProductType = ({ productos }) => {
                     `Hola Abuelo Mario, quiero solicitar el producto ${producto.name}`
                   )}`}
                   target="_blank"
+                  aria-label="btn-whatsapp"
                   rel="noopener noreferrer"
                   className="inline-block w-max bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300"
                 >

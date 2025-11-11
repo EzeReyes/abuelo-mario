@@ -8,10 +8,14 @@ const AllProducts = ({productos, loading, error}) => {
         <div className="m-4 p-10 flex flex-col gap-4 items-center min-h-screen justify-center">
             <Encabezado titulo={"Todos los productos"} />
             <section className="py-16 px-4 md:px-12 bg-white">
+                {productos?.length === 0 && !loading && !error && (
+                    <p className="text-center text-gray-500 text-lg">No hay productos disponibles en este momento.</p>
+                )}
 
                 { loading && <p className="flex items-center justify-center text-blue-950 text-2xl font-bold">Cargando productos abuelo Mario...</p>}
                 { error && <p className="flex items-center justify-center text-red-600 text-2xl font-bold">Se produjo un error al cargar los productos</p>}
 
+                {productos?.length > 0 && (
                 <div className="flex flex-col gap-12">
                     {productos.map((producto) => (
                     <div
@@ -20,11 +24,16 @@ const AllProducts = ({productos, loading, error}) => {
                     >
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
-                        <Link title={`${producto.tipo} + ${producto.nombre}`} to={`/${producto.idString}`}>                        
+                        <Link 
+                            aria-label={`Ver detalles del producto ${producto.name}`}
+                            title={`${producto.tipo} + ${producto.name}`} 
+                            to={`/${producto.idString}`}
+                        >                        
                         <img
-                            title={`${producto.tipo} + ${producto.nombre}`}                            
+                            aria-label={`Ver detalles del producto ${producto.name}`}
+                            title={`${producto.tipo} + ${producto.name}`}                            
                             src={producto.imagen}
-                            alt={`producto ${producto.name}`}
+                            alt={`imagen del producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"
                             loading="lazy"
                         />
@@ -49,6 +58,7 @@ const AllProducts = ({productos, loading, error}) => {
                         href={`https://wa.me/+5492235950860?text=${encodeURIComponent(
                             `Hola Abuelo Mario, quiero solicitar el producto ${producto.name}`
                         )}`}
+                        aria-label="btn-whatsapp"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block w-max bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300"
@@ -59,6 +69,7 @@ const AllProducts = ({productos, loading, error}) => {
                     </div>
                     ))}
                 </div>
+                )}
             </section>
             <BtnWsp />
         </div>

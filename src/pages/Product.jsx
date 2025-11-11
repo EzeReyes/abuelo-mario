@@ -28,13 +28,22 @@ const Product = () => {
     skip: !id, // Evita ejecutar la consulta si no hay id
   });
 
-  const producto = data?.obtenerProducto || [];
+  const producto = data?.obtenerProducto;
   return(
         <div className="m-4 p-10 flex flex-col gap-4 min-h-screen items-center justify-center">
-            <section className="py-16 px-4 md:px-12 bg-white">
-                { loading && <p className="flex items-center justify-center text-blue-950 text-2xl font-bold">Cargando productos abuelo Mario...</p>}
-                { error && <p className="flex items-center justify-center text-red-600 text-2xl font-bold">Se produjo un error al cargar los productos</p>}
+            <section aria-label={`Detalle del producto ${producto?.name}`} className="py-16 px-4 md:px-12 bg-white">
+                {!producto && !loading && !error && (
+                    <p className="text-center text-gray-500 text-lg">No hay producto disponible en este momento.</p>
+                )}
 
+                { loading && <p className="flex items-center justify-center text-blue-950 text-2xl font-bold">Cargando producto abuelo Mario...</p>}
+                {error && (
+                <p className="text-red-600 text-2xl font-bold">
+                    Se produjo un error al cargar el producto: {error.message}
+                </p>
+                )}
+
+                {producto && (
                 <div className="flex flex-col gap-12">
                     <div
                         key={producto.id}
@@ -43,7 +52,8 @@ const Product = () => {
                         {/* Imagen */}
                         <div className="w-full md:w-1/2">
                         <img
-                            title={`${producto.tipo} + ${producto.nombre}`}                            
+                            aria-label={`Ver detalles del producto ${producto.name}`}
+                            title={`${producto.tipo} + ${producto.name}`}                            
                             src={producto.imagen}
                             alt={`producto ${producto.name}`}
                             className="w-full h-auto rounded-xl object-cover shadow-md"
@@ -69,6 +79,7 @@ const Product = () => {
                         href={`https://wa.me/+5492235950860?text=${encodeURIComponent(
                             `Hola Abuelo Mario, quiero solicitar el producto ${producto.name}`
                         )}`}
+                        aria-label="btn-whatsapp"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block w-max bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300"
@@ -78,6 +89,7 @@ const Product = () => {
                         </div>
                     </div>
                 </div>
+                )}
             </section>
             <BtnWsp />
         </div>
