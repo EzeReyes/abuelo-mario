@@ -53,6 +53,7 @@ const ProductType = ({ productos }) => {
                     `Hola Abuelo Mario, quiero solicitar el producto ${producto.name}`
                   )}`}
                   target="_blank"
+                  title='btn-whatsapp'
                   aria-label="btn-whatsapp"
                   rel="noopener noreferrer"
                   className="inline-block w-max bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300"

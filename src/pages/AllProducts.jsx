@@ -58,6 +58,7 @@ const AllProducts = ({productos, loading, error}) => {
                         href={`https://wa.me/+5492235950860?text=${encodeURIComponent(
                             `Hola Abuelo Mario, quiero solicitar el producto ${producto.name}`
                         )}`}
+                        title='btn-whatsapp'
                         aria-label="btn-whatsapp"
                         target="_blank"
                         rel="noopener noreferrer"

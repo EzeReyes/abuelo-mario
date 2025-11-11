@@ -108,9 +108,9 @@ const Navbar = () => {
                   productsDropdownOpen ? 'opacity-100 max-h-96 translate-y-0' : 'opacity-0 max-h-0 -translate-y-2'
                 }`}
               >
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to={`/productos/pomada`}>Pomada</HashLink></li>
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to={`/productos/cera`}>Cera</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink title="productos abuelo mario" aria-label="productos abuelo mario" to="/all-products">Ver todos los productos</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink title='pomada abuelo mario' aria-label='pomada abuelo mario' to={`/productos/pomada`}>Pomada</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink title="cera abuelo mario" aria-label="cera abuelo mario" to={`/productos/cera`}>Cera</HashLink></li>
                 <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink>Shaving Gel</HashLink></li>
               </ul>
             </div>
@@ -171,9 +171,9 @@ const Navbar = () => {
                   mobileProductsOpen ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
                 }`}
               > 
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink to="/all-products">Ver todos los productos</HashLink></li>
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" ><HashLink to={`/productos/pomada`}>Pomada</HashLink></li>
-                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" ><HashLink to={`/productos/cera`}>Cera</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink title="productos abuelo mario" aria-label="productos abuelo mario" to="/all-products">Ver todos los productos</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" ><HashLink title='pomada abuelo mario' aria-label='pomada abuelo mario' to={`/productos/pomada`}>Pomada</HashLink></li>
+                <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" ><HashLink title="cera abuelo mario" aria-label="cera abuelo mario" to={`/productos/cera`}>Cera</HashLink></li>
                 <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><HashLink>Shaving Gel</HashLink></li>
               </ul>
             </div>

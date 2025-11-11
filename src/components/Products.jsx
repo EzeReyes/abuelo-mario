@@ -14,7 +14,7 @@ const Products = () => {
 
       <Carrusel />
 
-      <HashLink scroll to={'/all-products'} className='mt-8 text-gray-800 font-bold text-lg md:text-2xl transition-all hover:text-yellow-500 hover:underline'>Ver todos los productos</HashLink>
+      <HashLink scroll title="productos abuelo mario" aria-label="productos abuelo mario" to={'/all-products'} className='mt-8 text-gray-800 font-bold text-lg md:text-2xl transition-all hover:text-yellow-500 hover:underline'>Ver todos los productos</HashLink>
     </div>
     </>
   );
